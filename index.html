@@ -17,14 +17,30 @@
     <div class='modal'>
         <conatiner class='modal-content'>
             <span class='exit'>&times;</span>
-            <input type='text' id='title-input' placeholder='Title'>
-            <input type='text' id='author-input' placeholder='Author'>
-            <input type='number' id='pages-input' placeholder='Number of Pages'>
-            <container class='checkbox-container'> 
-            <label for='pages-input'>Have you read it yet? </label>
-            <input type='checkbox' id='pages-input'>
-            </container>
-            <button id='submit-new-book'>Submit</button>
+            <h2 id='add-book-header'>Add Book to Library</h2>
+            <form action="" method='post'> 
+                <ul>
+                    <li>
+                        <label for='title-input'>Title:</label>
+                        <input type='text' class='new-book-input' id='title-input' placeholder='Title'>
+                    </li>
+                    <li>
+                        <label for='author-input'>Author:</label>
+                        <input type='text' class='new-book-input' id='author-input' placeholder='Author'>
+                    </li>
+                    <li>
+                        <label for='pages-input'>Number of Pages:</label>
+                        <input type='number' class='new-book-input' id='pages-input' placeholder='Number of Pages'>
+                    </li>
+                    <li>
+                        <label for='read-input'>Have you read it yet? </label>
+                        <input type='checkbox' class='new-book-input' id='read-input'>
+                    </li>
+                    <li class='button'>
+                        <button type='submit' id='submit-new-book'>Submit</button>
+                    </li>
+                </ul>
+            </form>
         </conatiner> 
     </div>
     <script src='script.js'> </script>    
