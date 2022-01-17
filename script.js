@@ -14,7 +14,7 @@ addBookToLibrary(theHobbit);
 addBookToLibrary(theRedPyramid); 
 displayAllBooks();  
 
-//constructor to make new Books
+//constructor to make new Book objects
 function Book(title, author, pages, read){
     this.title = title; 
     this.author = author; 
@@ -32,13 +32,14 @@ function addBookToLibrary(myBook){
 //adds Book to display, displays book
 function displayBook(myBook){
     let bookDiv = document.createElement('div'); 
+    bookDiv.classList.add('book-div'); 
     bookDiv.setAttribute('data-index', myBook.bookNum); //sets index to HTML element to be able to remove the element
     bookDiv.textContent = myBook.info; 
 
     let removeButton = document.createElement('button');
     removeButton.classList.add('remove-book-button'); 
     removeButton.addEventListener('click', () => removeBook(myBook)); 
-    removeButton.textContent = 'x'; 
+    removeButton.textContent = '✖'; 
     bookDiv.appendChild(removeButton); 
 
     display.appendChild(bookDiv); 

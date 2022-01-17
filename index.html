@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
+    <nav class='navbar'>
         <h1 class='logo'>MyLibrary</h1>
     </nav>
     <div class='book-display'>
-        <button class='new-book-button'>NEW BOOK</button>
+        <button class='new-book-button'>+ NEW BOOK</button>
     </div> 
     <div class='modal'>
         <conatiner class='modal-content'>
@@ -30,14 +30,14 @@
                     </li>
                     <li>
                         <label for='pages-input'>Number of Pages:</label>
-                        <input type='number' class='new-book-input' id='pages-input' placeholder='Number of Pages' name='pages_input'>
+                        <input type='number' class='new-book-input' id='pages-input' placeholder='# of Pages' name='pages_input'>
                     </li>
                     <li>
                         <label for='read-input'>Have you read it yet? </label>
                         <input type='checkbox' class='new-book-input' id='read-input' name='read_input'>
                     </li>
                     <li class='button'>
-                        <button type='button' id='submit-new-book'>Submit</button>
+                        <button type='button' id='submit-new-book'>SUBMIT</button>
                     </li>
                 </ul>
             </form>
