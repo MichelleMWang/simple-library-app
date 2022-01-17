@@ -18,26 +18,26 @@
         <conatiner class='modal-content'>
             <span class='exit'>&times;</span>
             <h2 id='add-book-header'>Add Book to Library</h2>
-            <form action="" method='post'> 
+            <form id='add-book-form' action=""> 
                 <ul>
                     <li>
                         <label for='title-input'>Title:</label>
-                        <input type='text' class='new-book-input' id='title-input' placeholder='Title'>
+                        <input type='text' class='new-book-input' id='title-input' placeholder='Title' name='title_input'>
                     </li>
                     <li>
                         <label for='author-input'>Author:</label>
-                        <input type='text' class='new-book-input' id='author-input' placeholder='Author'>
+                        <input type='text' class='new-book-input' id='author-input' placeholder='Author' name='author_input'>
                     </li>
                     <li>
                         <label for='pages-input'>Number of Pages:</label>
-                        <input type='number' class='new-book-input' id='pages-input' placeholder='Number of Pages'>
+                        <input type='number' class='new-book-input' id='pages-input' placeholder='Number of Pages' name='pages_input'>
                     </li>
                     <li>
                         <label for='read-input'>Have you read it yet? </label>
-                        <input type='checkbox' class='new-book-input' id='read-input'>
+                        <input type='checkbox' class='new-book-input' id='read-input' name='read_input'>
                     </li>
                     <li class='button'>
-                        <button type='submit' id='submit-new-book'>Submit</button>
+                        <button type='button' id='submit-new-book'>Submit</button>
                     </li>
                 </ul>
             </form>
