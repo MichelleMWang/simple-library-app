@@ -105,6 +105,26 @@ body {
   color: #d35656;
 }
 
+.book-div .change-read-button {
+  margin-left: auto;
+  margin-right: 0;
+  border: none;
+  background-color: transparent;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.book-div .change-read-button:hover {
+  cursor: pointer;
+}
+
+.book-div .change-read-button[read-status='read'] {
+  color: #6bc46b;
+}
+
+.book-div .change-read-button[read-status='not read yet'] {
+  color: #d35656;
+}
+
 .new-book-button {
   font-size: 20px;
   margin: 1rem;

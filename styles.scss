@@ -88,6 +88,24 @@ body{
             color: rgb(211, 86, 86); 
         }
     }
+    .change-read-button{
+        margin-left: auto; 
+        margin-right: 0; 
+        //border: 1px solid #999; 
+        border: none; 
+        background-color: transparent; 
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+        &:hover{
+            cursor: pointer; 
+        }
+        &[read-status='read']{
+            color: rgb(107, 196, 107); 
+        }
+        &[read-status='not read yet']{
+            color:rgb(211, 86, 86); 
+        }
+
+    }
 }
 
 .new-book-button{
@@ -105,3 +123,4 @@ body{
         margin: 0; 
     }
 }
+

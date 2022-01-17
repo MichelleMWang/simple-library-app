@@ -8,19 +8,26 @@ const submitNewBook = document.getElementById('submit-new-book');
 let myLibrary = []; 
 
 //default books/tester books 
-let theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, 'not read yet'); 
-let theRedPyramid = new Book('The Red Pyramid', 'Rick Riordan', 357, 'read'); 
+let theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, false); 
+let theRedPyramid = new Book('The Red Pyramid', 'Rick Riordan', 357, true); 
 addBookToLibrary(theHobbit); 
 addBookToLibrary(theRedPyramid); 
 displayAllBooks();  
 
 //constructor to make new Book objects
-function Book(title, author, pages, read){
+function Book(title, author, pages, didRead){
     this.title = title; 
     this.author = author; 
     this.pages = pages; 
-    this.read = read; 
-    this.info = title + ' by ' + author + ', ' + pages + ' pages, ' + read;
+    if (didRead) this.read = 'read'; 
+    else this.read = 'not read yet'; 
+
+    this.info = title + ' by ' + author + ', ' + pages + ' pages';
+    this.changeRead = () => {
+        if (this.read == 'read'){
+            this.read = 'not read yet';
+        } else this.read = 'read'; 
+    }; 
 }
 
 //adds Books to array myLibrary
@@ -35,6 +42,17 @@ function displayBook(myBook){
     bookDiv.classList.add('book-div'); 
     bookDiv.setAttribute('data-index', myBook.bookNum); //sets index to HTML element to be able to remove the element
     bookDiv.textContent = myBook.info; 
+
+    let changeReadButton = document.createElement('button');  
+    changeReadButton.addEventListener('click', () => {
+        myBook.changeRead(); 
+        changeReadButton.textContent = myBook.read; 
+        changeReadButton.setAttribute('read-status', myBook.read); //to style in CSS
+    }); 
+    changeReadButton.setAttribute('read-status', myBook.read);
+    changeReadButton.classList.add('change-read-button'); 
+    changeReadButton.textContent = myBook.read; 
+    bookDiv.appendChild(changeReadButton); 
 
     let removeButton = document.createElement('button');
     removeButton.classList.add('remove-book-button'); 
@@ -52,6 +70,7 @@ function displayAllBooks(){
     })
 }
 
+//event listeners for opening/closing modal 
 newBookButton.addEventListener('click', () => {
     modal.style.display = 'block'; 
 })
@@ -75,12 +94,7 @@ submitNewBook.addEventListener('click', () => {
     let titleInput = document.getElementById('title-input').value; 
     let authorInput = document.getElementById('author-input').value; 
     let pagesInput = document.getElementById('pages-input').value; 
-    let readOnOff = document.getElementById('read-input').value;
-    
-    let readInput = ''; 
-    if (readOnOff == 'on') readInput = 'read'; 
-    else readInput = 'not read yet'; 
-    
+    let readInput = document.getElementById('read-input').checked;
     let newBook = new Book(titleInput, authorInput, pagesInput, readInput); 
 
     displayBook(newBook); 
