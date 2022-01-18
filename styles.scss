@@ -32,6 +32,7 @@ body{
         flex-direction: column; 
         input{
             margin: 1rem; 
+            padding: 1rem; 
             border: 1px solid #999;
             font-size: 18px; 
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
@@ -89,9 +90,10 @@ body{
         }
     }
     .change-read-button{
-        margin-left: auto; 
-        margin-right: 0; 
-        //border: 1px solid #999; 
+        margin-left: 2rem; 
+        //margin-right: 0; 
+        padding-bottom: .3rem; 
+        font-size: 18px; 
         border: none; 
         background-color: transparent; 
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 

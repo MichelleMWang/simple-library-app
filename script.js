@@ -99,6 +99,7 @@ submitNewBook.addEventListener('click', () => {
 
     displayBook(newBook); 
     modal.style.display = 'none';
+    reset(); 
 })
 
 
